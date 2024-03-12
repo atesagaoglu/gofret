@@ -2,10 +2,19 @@ package main
 
 import (
 	"fmt"
-	"github.com/atesagaoglu/gofret/src/entries"
+	"log"
+
+	"github.com/atesagaoglu/gofret/src/desktopentry"
 )
 
 func main() {
 	fmt.Println("Hello, World!")
-	entries.GetFiles()
+	desktopentry.CacheEntries()
+	entries, err := desktopentry.ReadCache()
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		desktopentry.PrintEntries(entries)
+	}
+
 }
