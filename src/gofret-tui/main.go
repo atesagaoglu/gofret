@@ -1,20 +1,22 @@
 package main
 
 import (
-	"fmt"
-	"log"
+	// "log"
 
 	"github.com/atesagaoglu/gofret/src/desktopentry"
 )
 
 func main() {
-	fmt.Println("Hello, World!")
 	desktopentry.CacheEntries()
+	
+	/* For now, don't read from the cache
+
 	entries, err := desktopentry.ReadCache()
 	if err != nil {
 		log.Fatal(err)
 	} else {
 		desktopentry.PrintEntries(entries)
 	}
+	*/
 
 }
